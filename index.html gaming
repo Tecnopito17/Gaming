@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal de Juegos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Portal de Juegos</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>Minecraft</h2>
+        <button onclick="window.open('https://classic.minecraft.net', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>Pinturillo 2</h2>
+        <button onclick="window.open('https://www.pinturillo2.com', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>Fútbol 11</h2>
+        <button onclick="window.open('https://www.futbol11.com', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>La Palabra del Día</h2>
+        <p id="palabra">Cargando...</p>
+        <button onclick="generarPalabra()">Nueva Palabra</button>
+      </div>
+
+      <div class="card">
+        <h2>Frase del Día</h2>
+        <p id="frase">Cargando...</p>
+        <button onclick="generarFrase()">Nueva Frase</button>
+      </div>
+
+      <div class="card">
+        <h2>1v1.lol</h2>
+        <button onclick="window.open('https://1v1.lol', '_blank')">Jugar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
