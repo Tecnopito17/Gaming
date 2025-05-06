@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaming, Just chill</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Inicio</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>Minecraft</h2>
+        <button onclick="window.open('https://classic.minecraft.net', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>Pinturillo 2</h2>
+        <button onclick="window.open('https://www.pinturillo2.com', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>Fútbol 11</h2>
+        <button onclick="window.open('https://www.futbol11.com', '_blank')">Jugar</button>
+      </div>
+
+      <div class="card">
+        <h2>La Palabra del Día</h2>
+        <p id="palabra">Cargando...</p>
+        <button onclick="generarPalabra()">Nueva Palabra</button>
+      </div>
+
+      <div class="card">
+        <h2>Frase del Día</h2>
+        <p id="frase">Cargando...</p>
+        <button onclick="generarFrase()">Nueva Frase</button>
+      </div>
+
+      <div class="card">
+        <h2>1v1.lol</h2>
+        <button onclick="window.open('https://1v1.lol', '_blank')">Jugar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px #00000080;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+button {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #008ba3;
+}
+
+p {
+  min-height: 40px;
+}
+const palabras = ["Innovación", "Códice", "Empatía", "Resiliencia", "Sinergia", "Efímero", "Ímpetu", "Equilibrio"];
+const frases = [
+  "El éxito es la suma de pequeños esfuerzos repetidos cada día.",
+  "Nunca es tarde para aprender algo nuevo.",
+  "La creatividad es la inteligencia divirtiéndose.",
+  "No cuentes los días, haz que los días cuenten.",
+  "La vida comienza donde termina tu zona de confort."
+];
+
+function generarPalabra() {
+  const palabra = palabras[Math.floor(Math.random() * palabras.length)];
+  document.getElementById("palabra").textContent = palabra;
+}
+
+function generarFrase() {
+  const frase = frases[Math.floor(Math.random() * frases.length)];
+  document.getElementById("frase").textContent = frase;
+}
+
+// Generar contenido inicial al cargar
+window.onload = () => {
+  generarPalabra();
+  generarFrase();
+};
